@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?nature') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+    z-index: -1;
+}
+
+/* Clock Container */
+.clock-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Clock Face */
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 4px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Hour, Minute, and Second Hands */
+.hour, .minute, .second {
+    position: absolute;
+    bottom: 50%;
+    translate: 143px;
+    transform-origin: bottom;
+    background-color: white;
+    z-index: 1;
+    transition: transform 1.0s cubic-bezier(0.4, 2.3, 0.3, 1); /* Smooth transition for second hand */
+}
+
+.hour {
+    height: 30%;
+    width: 6px;
+    z-index: 3;
+}
+
+.minute {
+    height: 40%;
+    width: 4px;
+    z-index: 2;
+}
+
+.second {
+    height: 45%;
+    width: 2px;
+    background-color: crimson;
+    z-index: 1;
+    /* Smooth transition for the second hand */
+    transition: transform 0.5s cubic-bezier(0.4, 2.3, 0.3, 1);
+}
+
+/* Center Dot */
+.center-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: crimson;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+/* Digital Time Display */
+#digital {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+#button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid crimson;
+    color: crimson;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+#button:hover {
+    transform: scale(1.1);
+}
